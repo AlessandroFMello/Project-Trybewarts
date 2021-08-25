@@ -1,6 +1,6 @@
 function validateLogin() {
-  const email = document.getElementById('input-email');
-  const password = document.getElementById('input-password');
+  const email = document.getElementById('login-email');
+  const password = document.getElementById('login-password');
   const button = document.getElementById('login-button');
 
   button.addEventListener('click', () => {
