@@ -14,8 +14,16 @@ main {
   width: 675px;
 }
 
+#full-name {
+  display: flex;
+}
+
 #trybewarts-forms-logo {
   height: 500px;
+}
+
+#user-info {
+  display: flex;
 }
 
 .header {
