@@ -1,3 +1,7 @@
+window.onload = function () {
+  enableSubmitButton();
+}
+
 function validateLogin() {
   const email = document.getElementById('login-email');
   const password = document.getElementById('login-password');
@@ -14,7 +18,12 @@ function validateLogin() {
 validateLogin();
 
 function enableSubmitButton () {
-  const checkboxToEnable = document.getElementById('agreement');
-  console.log(checkboxToEnable);
+  const elementCheckbox = document.getElementById('agreement');
+  const buttonToBeEnabled = document.getElementById('submit-btn');
+  buttonToBeEnabled.disabled = true;
+
+  elementCheckbox.addEventListener('change', (receivedEvent) => {
+    const checkboxToEnable = receivedEvent.target;
+    (checkboxToEnable.checked) ? buttonToBeEnabled.disabled = false : buttonToBeEnabled.disabled = true;
+  });  
 }
-enableSubmitButton();
