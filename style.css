@@ -35,3 +35,9 @@ main {
 .trybewarts-login {
   display: flex;
 }
+.container-select-markers{
+  display: flex;
+}
+.container-select-markers div{
+  margin-right: 20px;
+}
