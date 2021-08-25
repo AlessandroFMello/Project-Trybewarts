@@ -13,7 +13,7 @@ function validateLogin() {
 }
 validateLogin();
 
-function enableSubmitButton () {
+function enableSubmitButton() {
   const checkboxToEnable = document.getElementById('agreement');
   console.log(checkboxToEnable);
 }
