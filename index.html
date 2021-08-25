@@ -9,13 +9,13 @@
 </head>
 <body>
   <header class="header">
-      <img class="trybewarts-header-logo" src="images/trybewarts-header-logo.svg" alt="Logotipo da escola de magia e programaria Trybewarts">
-      <h1 id="trybewarts-header-title">Trybewarts</h1>
-      <form class="trybewarts-login" action="" method="get">
-        <input type="email" name="email" placeholder="Email" id="input-email">
-        <input type="password" name="password" placeholder="Senha" id="input-password">
-        <button type="submit" id="login-button">Entrar</button>
-      </form>
+    <img class="trybewarts-header-logo" src="images/trybewarts-header-logo.svg" alt="Logotipo da escola de magia e programaria Trybewarts">
+    <h1 id="trybewarts-header-title">Trybewarts</h1>
+    <form class="trybewarts-login" action="" method="get">
+      <input type="email" name="email" placeholder="Email" id="login-email">
+      <input type="password" name="password" placeholder="Senha" id="login-password">
+      <button type="submit" id="login-button">Entrar</button>
+    </form>
   </header>
   <main>
     <form action="" id="evaluation-form">
@@ -38,13 +38,28 @@
       <!-- 13-15 - Arthur -->
       <div>
         <label id="label-family">Qual sua família?</label><br>
-           <label for="front-family">Frontend</label>
-           <input type="radio" id="front-family" name="family" value="Frontend"> <br>
-           <label for="back-family">Backend</label>
-           <input type="radio" id="back-family" name="family" value="Backend"> <br>
-           <label for="full-family">FullStack</label>
-           <input type="radio" id="full-family" name="family" value="FullStack"> <br>
+          <label for="front-family">Frontend</label>
+          <input type="radio" id="front-family" name="family" value="Frontend"> <br>
+          <label for="back-family">Backend</label>
+          <input type="radio" id="back-family" name="family" value="Backend"> <br>
+          <label for="full-family">FullStack</label>
+          <input type="radio" id="full-family" name="family" value="FullStack"> <br>
          </div>
+      <div>
+        <label id="label-content">Qual conteúdo você está com mais vontade de aprender?</label><br>
+          <label for="HoFs-family">HoFs</label>  
+          <input type="checkbox" id="HoFs-family" value="HoFs">
+          <label for="Jest-family">Jest</label>  
+          <input type="checkbox" id="Jest-family" value="Jest">
+          <label for="Promisse-family">Promisse</label>  
+          <input type="checkbox" id="Promisse-family" value="Promisse"><br>
+          <label for="React-family">React</label>  
+          <input type="checkbox" id="React-family" value="React">
+          <label for="SQL-family">SQL</label>  
+          <input type="checkbox" id="SQL-family" value="SQL">
+          <label for="Python-family">Python</label>  
+          <input type="checkbox" id="Python-family" value="Python">
+      </div>
       <!-- 16-18 - Antonio -->
       <!-- 16 -->
       <label for="agreement" id="label-infos">Você concorda com o uso das informações acima?
