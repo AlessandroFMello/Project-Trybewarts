@@ -40,7 +40,7 @@ function textareaCounter() {
 }
 textareaCounter();
 
-function returnForm(){
+function returnForm() {
   const formInfo = {
     Nome: '',
     Email: '',
@@ -52,35 +52,35 @@ function returnForm(){
   }
   const form = document.getElementById('evaluation-form')
   for (let index = 0; index < form.length; index++) {  
-    console.log(form[index]);
-    if (form[index].type === 'text'){
-      if (form[index].name === 'nome'){
+    if (form[index].type === 'text') {
+      if (form[index].name === 'nome') {
         formInfo['Nome'] = form[index].value;
-      } else if (form[index].name === 'sobrenome'){
+      } else if (form[index].name === 'sobrenome') {
         formInfo['Nome'] += ' ' + form[index].value;
-      } else if (form[index].name === 'email'){
+      } else if (form[index].name === 'email') {
         formInfo['Email'] = form[index].value;
-      } 
+      }
     }
-    if (form[index].id === 'house'){
+    if (form[index].id === 'house') {
       formInfo['Casa'] = form[index].value;
     }
-    if (form[index].type === 'checkbox' && form[index].checked === true){
+    if (form[index].type === 'checkbox' && form[index].checked === true) {
       formInfo['Matérias'] += ', ' + form[index].value;;
     }
-    if (form[index].name === 'family' && form[index].checked === true){
+    if (form[index].name === 'family' && form[index].checked === true) {
       formInfo['Família'] = form[index].value;
     }
-    if (form[index].name === 'rate' && form[index].checked === true){
+    if (form[index].name === 'rate' && form[index].checked === true) {
       formInfo['Avaliação'] = form[index].value;
     }
-    if (form[index].type === 'textarea'){
-      formInfo['Observações'] = form[index].value;;
+    if (form[index].type === 'textarea') {
+      formInfo['Observações'] = form[index].value;
     }
   }
-  return formInfo
+  return formInfo;
 }
-function clearMainSection (receivedEvent) {
+
+function clearMainSection(receivedEvent) {
   receivedEvent.preventDefault();
   console.log(receivedEvent.target);
   const sectionToClear = document.getElementsByTagName('main')[0];
