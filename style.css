@@ -38,15 +38,15 @@ main {
   cursor: pointer;
 }
 
-#label-family label, input{
+#label-family label , input {
   cursor: pointer;
 }
 
-#label-content label, input{
+#label-content label , input {
   cursor: pointer;
 }
 
-#label-rate label, input{
+#label-rate label , input {
   cursor: pointer;
 }
 
