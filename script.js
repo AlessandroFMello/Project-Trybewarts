@@ -77,8 +77,15 @@ function returnForm(){
     if (form[index].type === 'textarea'){
       formInfo['Observações'] = form[index].value;;
     }
-    // finalValues.innerHTML = form[index].value
-    //   form.appendChild(finalValues)
   }
   return formInfo
 }
+function clearMainSection (receivedEvent) {
+  receivedEvent.preventDefault();
+  console.log(receivedEvent.target);
+  const sectionToClear = document.getElementsByTagName('main')[0];
+  sectionToClear.innerHTML = 'Teste.';
+}
+
+const btnSubmit = document.getElementById('submit-btn');
+btnSubmit.addEventListener('click', clearMainSection);
