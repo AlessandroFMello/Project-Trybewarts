@@ -49,9 +49,9 @@ function returnForm() {
     Matérias: '',
     Avaliação: '',
     Observações: '',
-  }
-  const form = document.getElementById('evaluation-form')
-  for (let index = 0; index < form.length; index++) {  
+  };
+  const form = document.getElementById('evaluation-form');
+  for (let index = 0; index < form.length; index += 1) {
     if (form[index].type === 'text') {
       if (form[index].name === 'nome') {
         formInfo['Nome'] = form[index].value;
@@ -62,19 +62,19 @@ function returnForm() {
       }
     }
     if (form[index].id === 'house') {
-      formInfo['Casa'] = form[index].value;
+      formInfo.Casa = form[index].value;
     }
     if (form[index].type === 'checkbox' && form[index].checked === true) {
-      formInfo['Matérias'] += ', ' + form[index].value;;
+      formInfo.Matérias += ', ' + form[index].value;
     }
     if (form[index].name === 'family' && form[index].checked === true) {
-      formInfo['Família'] = form[index].value;
+      formInfo.Família = form[index].value;
     }
     if (form[index].name === 'rate' && form[index].checked === true) {
-      formInfo['Avaliação'] = form[index].value;
+      formInfo.Avaliação = form[index].value;
     }
     if (form[index].type === 'textarea') {
-      formInfo['Observações'] = form[index].value;
+      formInfo.Observações = form[index].value;
     }
   }
   return formInfo;
