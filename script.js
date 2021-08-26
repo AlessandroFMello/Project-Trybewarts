@@ -39,3 +39,13 @@ function textareaCounter() {
   });
 }
 textareaCounter();
+
+function clearMainSection (receivedEvent) {
+  receivedEvent.preventDefault();
+  console.log(receivedEvent.target);
+  const sectionToClear = document.getElementsByTagName('main')[0];
+  sectionToClear.innerHTML = 'Teste.';
+}
+
+const btnSubmit = document.getElementById('submit-btn');
+btnSubmit.addEventListener('click', clearMainSection);
