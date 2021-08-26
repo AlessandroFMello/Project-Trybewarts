@@ -82,35 +82,3 @@ function returnForm(){
   }
   return formInfo
 }
-
-// function fillForm() {
-//   preventDefault();
-//   const button = document.getElementById('submit-btn');
-//   const name = document.getElementById('input-name');
-//   const lastName = document.getElementById('input-lastname');
-//   const email = document.getElementById('input-email');
-//   const house = document.getElementById('house');
-//   const family = document.getElementById('label-family');
-//   const materias = document.getElementById('label-content');
-//   const avaliacao = document.getElementById('label-rate');
-//   const obs = document.getElementById('textarea');
-
-//   name.innerHTML = name.value;
-//   lastName.innerHTML = lastName.value;
-//   email.innerHTML = email.value;
-//   house.innerHTML = house.value;
-//   family.innerHTML = family.value;
-//   materias.innerHTML = materias.value;
-//   avaliacao.innerHTML = avaliacao.value;
-//   obs.innerHTML = obs.value;
-  
-// } 
-// const myInfo = {
-  //   Name: `-${name.value}- -${lastName.value}-`,
-  //   Email: `-${email.value}-`,
-  //   Casa: `-${house.value}-`,
-  //   Família: `-${family.value}-`,
-  //   Matérias: `-${materias.value}-`,
-  //   Avaliação: `-${avaliacao.value}-`,
-  //   Observações: `-${obs.value}-`,
-  // };button
