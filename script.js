@@ -28,3 +28,14 @@ function enableSubmitButton() {
   });
 }
 enableSubmitButton();
+
+function textareaCounter() {
+  const textCounter = document.getElementById('counter');
+  const textArea = document.getElementById('textarea');
+
+  textArea.addEventListener('keyup', () => {
+    const counter = (textArea.maxLength - (textArea.value.length));
+    textCounter.innerText = `${counter} caracteres restantes.`;
+  });
+}
+textareaCounter();
