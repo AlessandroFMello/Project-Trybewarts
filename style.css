@@ -34,6 +34,22 @@ main {
   display: flex;
 }
 
+#house {
+  cursor: pointer;
+}
+
+#label-family label, input{
+  cursor: pointer;
+}
+
+#label-content label, input{
+  cursor: pointer;
+}
+
+#label-rate label, input{
+  cursor: pointer;
+}
+
 .header {
   display: flex;
   background-color: rgb(50, 167, 145);
