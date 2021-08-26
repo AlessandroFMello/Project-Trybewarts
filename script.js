@@ -54,11 +54,11 @@ function returnForm() {
   for (let index = 0; index < form.length; index += 1) {
     if (form[index].type === 'text') {
       if (form[index].name === 'nome') {
-        formInfo['Nome'] = form[index].value;
+        formInfo.Nome = form[index].value;
       } else if (form[index].name === 'sobrenome') {
-        formInfo['Nome'] += ' ' + form[index].value;
+        formInfo.Nome += ' ' + form[index].value;
       } else if (form[index].name === 'email') {
-        formInfo['Email'] = form[index].value;
+        formInfo.Email = form[index].value;
       }
     }
     if (form[index].id === 'house') {
