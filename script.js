@@ -39,3 +39,78 @@ function textareaCounter() {
   });
 }
 textareaCounter();
+
+function returnForm(){
+  const formInfo = {
+    Nome: '',
+    Email: '',
+    Casa: '',
+    Família: '',
+    Matérias: '',
+    Avaliação: '',
+    Observações: '',
+  }
+  const form = document.getElementById('evaluation-form')
+  for (let index = 0; index < form.length; index++) {  
+    console.log(form[index]);
+    if (form[index].type === 'text'){
+      if (form[index].name === 'nome'){
+        formInfo['Nome'] = form[index].value;
+      } else if (form[index].name === 'sobrenome'){
+        formInfo['Nome'] += ' ' + form[index].value;
+      } else if (form[index].name === 'email'){
+        formInfo['Email'] = form[index].value;
+      } 
+    }
+    if (form[index].id === 'house'){
+      formInfo['Casa'] = form[index].value;
+    }
+    if (form[index].type === 'checkbox' && form[index].checked === true){
+      formInfo['Matérias'] += ', ' + form[index].value;;
+    }
+    if (form[index].name === 'family' && form[index].checked === true){
+      formInfo['Família'] = form[index].value;
+    }
+    if (form[index].name === 'rate' && form[index].checked === true){
+      formInfo['Avaliação'] = form[index].value;
+    }
+    if (form[index].type === 'textarea'){
+      formInfo['Observações'] = form[index].value;;
+    }
+    // finalValues.innerHTML = form[index].value
+    //   form.appendChild(finalValues)
+  }
+  return formInfo
+}
+
+// function fillForm() {
+//   preventDefault();
+//   const button = document.getElementById('submit-btn');
+//   const name = document.getElementById('input-name');
+//   const lastName = document.getElementById('input-lastname');
+//   const email = document.getElementById('input-email');
+//   const house = document.getElementById('house');
+//   const family = document.getElementById('label-family');
+//   const materias = document.getElementById('label-content');
+//   const avaliacao = document.getElementById('label-rate');
+//   const obs = document.getElementById('textarea');
+
+//   name.innerHTML = name.value;
+//   lastName.innerHTML = lastName.value;
+//   email.innerHTML = email.value;
+//   house.innerHTML = house.value;
+//   family.innerHTML = family.value;
+//   materias.innerHTML = materias.value;
+//   avaliacao.innerHTML = avaliacao.value;
+//   obs.innerHTML = obs.value;
+  
+// } 
+// const myInfo = {
+  //   Name: `-${name.value}- -${lastName.value}-`,
+  //   Email: `-${email.value}-`,
+  //   Casa: `-${house.value}-`,
+  //   Família: `-${family.value}-`,
+  //   Matérias: `-${materias.value}-`,
+  //   Avaliação: `-${avaliacao.value}-`,
+  //   Observações: `-${obs.value}-`,
+  // };button
