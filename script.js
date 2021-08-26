@@ -43,7 +43,7 @@ textareaCounter();
 function clearMainSection (receivedEvent) {
   receivedEvent.preventDefault();
   console.log(receivedEvent.target);
-  const sectionToClear = document.getElementsByTagName('main')[0];
+  const sectionToClear = document.getElementById('evaluation-form');
   sectionToClear.innerHTML = 'Teste.';
 }
 
