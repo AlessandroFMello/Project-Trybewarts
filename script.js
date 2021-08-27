@@ -40,85 +40,100 @@ function textareaCounter() {
 }
 textareaCounter();
 
-function formInfosSubjects() {
-  const subjects = document.getElementsByClassName('subject');
-  let selectedSubjects = '';
-  const arrayOfSubjects = [];
-  for (let index = 0; index < subjects.length; index += 1) {
-    if (subjects[index].checked) arrayOfSubjects.push(subjects[index].value);
+const formInfo = {
+  Nome: '',
+  Email: '',
+  Casa: '',
+  Família: '',
+  Matérias: '',
+  Avaliação: '',
+  Observações: '',
+};
+
+const form = document.getElementById('evaluation-form');
+
+function casaInfo() {
+  for (let index = 0; index < form.length; index += 1) {
+    if (form[index].id === 'house') {
+      formInfo.Casa = form[index].value;
+    }
   }
-  selectedSubjects = arrayOfSubjects.join(', ');
-  return selectedSubjects;
-}
-
-function formInfosRate() {
-  const rateContainer = document.querySelectorAll('#rate-container input');
-  let selectedRate = '';
-  for (let index = 0; index < rateContainer.length; index += 1) {
-    if (rateContainer[index].checked) selectedRate = rateContainer[index].value;
-  }
-  return selectedRate;
-}
-
-function formInfosFamily() {
-  const familyContainer = document.querySelectorAll('#family-container input');
-  let selectedFamily = '';
-  for (let index = 0; index < familyContainer.length; index += 1) {
-    if (familyContainer[index].checked) selectedFamily = familyContainer[index].value;
-  }
-  return selectedFamily;
-}
-
-function formInfosHouse() {
-  const formInfoCasa = document.getElementById('house').value;
-  return formInfoCasa;
-}
-
-function formInfosEmail() {
-  const formInfoEmail = document.getElementById('input-email').value;
-  return formInfoEmail;
-}
-
-function formInfosObservations() {
-  const formInfoObservations = document.getElementById('textarea').value;
-  return formInfoObservations;
-}
-
-function formInfosName() {
-  let fullName = document.getElementById('input-name').value;
-  fullName += ' ';
-  fullName += document.getElementById('input-lastname').value;
-  return fullName;
-}
-
-function formInfo() {
-  // const formInfo = {};
-  formInfo.Nome = formInfosName();
-  formInfo.Email = formInfosEmail();
-  formInfo.Casa = formInfosHouse();
-  formInfo.Família = formInfosFamily();
-  formInfo.Matérias = formInfosSubjects();
-  formInfo.Avaliação = formInfosRate();
-  formInfo.Observações = formInfosObservations();
   return formInfo;
 }
 
+function familiaInfo() {
+  for (let index = 0; index < form.length; index += 1) {
+    if (form[index].name === 'family' && form[index].checked === true) {
+      formInfo.Família = form[index].value;
+    }
+  }
+}
+
+function rateInfo() {
+  for (let index = 0; index < form.length; index += 1) {
+    if (form[index].name === 'rate' && form[index].checked === true) {
+      formInfo.Avaliação = form[index].value;
+    }
+  }
+}
+
+function materiaInfo() {
+  for (let index = 0; index < form.length; index += 1) {
+    if (form[index].name === 'materia' && form[index].checked === true) {
+      formInfo.Matérias += `${form[index].value}, `;
+    }
+  }
+}
+
+function nomeInfo() {
+  for (let index = 0; index < form.length; index += 1) {
+    if (form[index].name === 'nome') {
+      formInfo.Nome = form[index].value;
+    } else if (form[index].name === 'sobrenome') {
+      formInfo.Nome += ` ${form[index].value}`;
+    }
+  }
+}
+
+function emailInfo() {
+  for (let index = 0; index < form.length; index += 1) {
+    if (form[index].name === 'email') {
+      formInfo.Email = form[index].value;
+    }
+  }
+}
+
+function textAreaInfo() {
+  for (let index = 0; index < form.length; index += 1) {
+    if (form[index].type === 'textarea') {
+      formInfo.Observações = form[index].value;
+    }
+  }
+}
+
+function runAllInfos() {
+  nomeInfo();
+  textAreaInfo();
+  materiaInfo();
+  casaInfo();
+  rateInfo();
+  familiaInfo();
+  emailInfo();
+}
+
 function createText() {
-  const infos = formInfo();
+  runAllInfos();
+  const infos = formInfo;
   const infoText = document.getElementById('form-container');
-  const formToHide = document.getElementById('evaluation-form');
-  if (infos) {
-    formToHide.style.display = 'none';
-    const paragraph = document.createElement('p');
-    paragraph.innerText = ` Nome: ${infos.Nome}
+  const paragraph = document.createElement('p');
+  paragraph.innerText = ` Nome: ${infos.Nome}
                             Email: ${infos.Email}
                             Casa: ${infos.Casa}
                             Família: ${infos.Família}
                             Matérias: ${infos.Matérias}
                             Avaliação: ${infos.Avaliação}
                             Observaçãoes: ${infos.Observações}`;
-    infoText.appendChild(paragraph);
-  }
+  infoText.appendChild(paragraph);
   return infoText;
 }
 
