@@ -56,7 +56,7 @@ function formInfos() {
       if (form[index].name === 'nome') {
         formInfo.Nome = form[index].value;
       } else if (form[index].name === 'sobrenome') {
-        formInfo.Nome += ' ' + form[index].value;
+        formInfo.Nome += `${ form[index].value}`;
       } else if (form[index].name === 'email') {
         formInfo.Email = form[index].value;
       }
@@ -64,7 +64,7 @@ function formInfos() {
     if (form[index].id === 'house') {
       formInfo.Casa = form[index].value;
     }
-    if (form[index].name === 'materia' && form[index].checked === true){
+    if (form[index].name === 'materia' && form[index].checked === true) {
       formInfo.Matérias += `${form[index].value}, `;
     }
     if (form[index].name === 'family' && form[index].checked === true) {
@@ -81,22 +81,21 @@ function formInfos() {
 }
 function createText() {
   const infos = formInfos();
-  const infoText = document.getElementById('form-container')
-  for (let key in infos){
-    const paragraphs = document.createElement('p')
-    paragraphs.innerText = `${key}: ${infos[key]}`
-    infoText.appendChild(paragraphs)
+  const infoText = document.getElementById('form-container');
+  for (const key in infos) {
+    const paragraphs = document.createElement('p');
+    paragraphs.innerText = `${key}: ${infos[key]}`;
+    infoText.appendChild(paragraphs);
   }
-  return infoText
+  return infoText;
 }
-function clearMainSection (receivedEvent) {
+function clearMainSection(receivedEvent) {
   receivedEvent.preventDefault();
   const sectionToClear = document.getElementById('evaluation-form');
-  const myText = createText()
+  const myText = createText();
   sectionToClear.innerHTML = '';
-  return myText
+  return myText;
 }
 
 const btnSubmit = document.getElementById('submit-btn');
 btnSubmit.addEventListener('click', clearMainSection);
-
