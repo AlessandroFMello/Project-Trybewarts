@@ -40,7 +40,7 @@ function textareaCounter() {
 }
 textareaCounter();
 
-function returnForm(){
+function formInfos() {
   const formInfo = {
     Nome: '',
     Email: '',
@@ -52,12 +52,11 @@ function returnForm(){
   }
   const form = document.getElementById('evaluation-form')
   for (let index = 0; index < form.length; index++) {  
-    console.log(form[index]);
     if (form[index].type === 'text'){
       if (form[index].name === 'nome'){
         formInfo['Nome'] = form[index].value;
       } else if (form[index].name === 'sobrenome'){
-        formInfo['Nome'] += ' ' + form[index].value;
+        formInfo['Nome'] += ` ${form[index].value}`;
       } else if (form[index].name === 'email'){
         formInfo['Email'] = form[index].value;
       } 
@@ -65,8 +64,8 @@ function returnForm(){
     if (form[index].id === 'house'){
       formInfo['Casa'] = form[index].value;
     }
-    if (form[index].type === 'checkbox' && form[index].checked === true){
-      formInfo['Matérias'] += ', ' + form[index].value;;
+    if (form[index].name === 'materia' && form[index].checked === true){
+      formInfo['Matérias'] += `${form[index].value}, `;
     }
     if (form[index].name === 'family' && form[index].checked === true){
       formInfo['Família'] = form[index].value;
@@ -80,12 +79,24 @@ function returnForm(){
   }
   return formInfo
 }
+function createText() {
+  const infos = formInfos();
+  const infoText = document.getElementById('form-container')
+  for (let key in infos){
+    const paragraphs = document.createElement('p')
+    paragraphs.innerText = `${key}: ${infos[key]}`
+    infoText.appendChild(paragraphs)
+  }
+  return infoText
+}
 function clearMainSection (receivedEvent) {
   receivedEvent.preventDefault();
-  console.log(receivedEvent.target);
-  const sectionToClear = document.getElementsByTagName('main')[0];
-  sectionToClear.innerHTML = 'Teste.';
+  const sectionToClear = document.getElementById('evaluation-form');
+  const myText = createText()
+  sectionToClear.innerHTML = '';
+  return myText
 }
 
 const btnSubmit = document.getElementById('submit-btn');
 btnSubmit.addEventListener('click', clearMainSection);
+
