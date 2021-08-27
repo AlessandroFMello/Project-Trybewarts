@@ -40,7 +40,7 @@ function textareaCounter() {
 }
 textareaCounter();
 
-function returnForm() {
+function formInfos() {
   const formInfo = {
     Nome: '',
     Email: '',
@@ -56,7 +56,7 @@ function returnForm() {
       if (form[index].name === 'nome') {
         formInfo.Nome = form[index].value;
       } else if (form[index].name === 'sobrenome') {
-        formInfo.Nome += ' ' + form[index].value;
+        formInfo.Nome += `${ form[index].value}`;
       } else if (form[index].name === 'email') {
         formInfo.Email = form[index].value;
       }
@@ -64,8 +64,8 @@ function returnForm() {
     if (form[index].id === 'house') {
       formInfo.Casa = form[index].value;
     }
-    if (form[index].type === 'checkbox' && form[index].checked === true) {
-      formInfo.Matérias += ', ' + form[index].value;
+    if (form[index].name === 'materia' && form[index].checked === true) {
+      formInfo.Matérias += `${form[index].value}, `;
     }
     if (form[index].name === 'family' && form[index].checked === true) {
       formInfo.Família = form[index].value;
@@ -79,12 +79,22 @@ function returnForm() {
   }
   return formInfo;
 }
-
+function createText() {
+  const infos = formInfos();
+  const infoText = document.getElementById('form-container');
+  for (const key in infos) {
+    const paragraphs = document.createElement('p');
+    paragraphs.innerText = `${key}: ${infos[key]}`;
+    infoText.appendChild(paragraphs);
+  }
+  return infoText;
+}
 function clearMainSection(receivedEvent) {
   receivedEvent.preventDefault();
-  console.log(receivedEvent.target);
   const sectionToClear = document.getElementById('evaluation-form');
-  sectionToClear.innerHTML = 'Teste.';
+  const myText = createText();
+  sectionToClear.innerHTML = '';
+  return myText;
 }
 
 const btnSubmit = document.getElementById('submit-btn');
