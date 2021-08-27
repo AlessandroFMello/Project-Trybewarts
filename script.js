@@ -40,55 +40,88 @@ function textareaCounter() {
 }
 textareaCounter();
 
-function formInfos() {
-  const formInfo = {
-    Nome: '',
-    Email: '',
-    Casa: '',
-    Família: '',
-    Matérias: '',
-    Avaliação: '',
-    Observações: '',
-  };
-  const form = document.getElementById('evaluation-form');
-  for (let index = 0; index < form.length; index += 1) {
-    if (form[index].type === 'text') {
-      if (form[index].name === 'nome') {
-        formInfo.Nome = form[index].value;
-      } else if (form[index].name === 'sobrenome') {
-        formInfo.Nome += `${ form[index].value}`;
-      } else if (form[index].name === 'email') {
-        formInfo.Email = form[index].value;
-      }
-    }
-    if (form[index].id === 'house') {
-      formInfo.Casa = form[index].value;
-    }
-    if (form[index].name === 'materia' && form[index].checked === true) {
-      formInfo.Matérias += `${form[index].value}, `;
-    }
-    if (form[index].name === 'family' && form[index].checked === true) {
-      formInfo.Família = form[index].value;
-    }
-    if (form[index].name === 'rate' && form[index].checked === true) {
-      formInfo.Avaliação = form[index].value;
-    }
-    if (form[index].type === 'textarea') {
-      formInfo.Observações = form[index].value;
-    }
+function formInfosSubjects() {
+  const subjects = document.getElementsByClassName('subject');
+  let selectedSubjects = '';
+  const arrayOfSubjects = [];
+  for (let index = 0; index < subjects.length; index += 1) {
+    if (subjects[index].checked) arrayOfSubjects.push(subjects[index].value);
   }
+  selectedSubjects = arrayOfSubjects.join(', ');
+  return selectedSubjects;
+}
+
+function formInfosRate() {
+  const rateContainer = document.querySelectorAll('#rate-container input');
+  let selectedRate = '';
+  for (let index = 0; index < rateContainer.length; index += 1) {
+    if (rateContainer[index].checked) selectedRate = rateContainer[index].value;
+  }
+  return selectedRate;
+}
+
+function formInfosFamily() {
+  const familyContainer = document.querySelectorAll('#family-container input');
+  let selectedFamily = '';
+  for (let index = 0; index < familyContainer.length; index += 1) {
+    if (familyContainer[index].checked) selectedFamily = familyContainer[index].value;
+  }
+  return selectedFamily;
+}
+
+function formInfosHouse() {
+  const formInfoCasa = document.getElementById('house').value;
+  return formInfoCasa;
+}
+
+function formInfosEmail() {
+  const formInfoEmail = document.getElementById('input-email').value;
+  return formInfoEmail;
+}
+
+function formInfosObservations() {
+  const formInfoObservations = document.getElementById('textarea').value;
+  return formInfoObservations;
+}
+
+function formInfosName() {
+  let fullName = document.getElementById('input-name').value;
+  fullName += ' ';
+  fullName += document.getElementById('input-lastname').value;
+  return fullName;
+}
+
+function formInfo() {
+  // const formInfo = {};
+  formInfo.Nome = formInfosName();
+  formInfo.Email = formInfosEmail();
+  formInfo.Casa = formInfosHouse();
+  formInfo.Família = formInfosFamily();
+  formInfo.Matérias = formInfosSubjects();
+  formInfo.Avaliação = formInfosRate();
+  formInfo.Observações = formInfosObservations();
   return formInfo;
 }
+
 function createText() {
-  const infos = formInfos();
+  const infos = formInfo();
   const infoText = document.getElementById('form-container');
-  for (const key in infos) {
-    const paragraphs = document.createElement('p');
-    paragraphs.innerText = `${key}: ${infos[key]}`;
-    infoText.appendChild(paragraphs);
+  const formToHide = document.getElementById('evaluation-form');
+  if (infos) {
+    formToHide.style.display = 'none';
+    const paragraph = document.createElement('p');
+    paragraph.innerText = ` Nome: ${infos.Nome}
+                            Email: ${infos.Email}
+                            Casa: ${infos.Casa}
+                            Família: ${infos.Família}
+                            Matérias: ${infos.Matérias}
+                            Avaliação: ${infos.Avaliação}
+                            Observaçãoes: ${infos.Observações}`;
+    infoText.appendChild(paragraph);
   }
   return infoText;
 }
+
 function clearMainSection(receivedEvent) {
   receivedEvent.preventDefault();
   const sectionToClear = document.getElementById('evaluation-form');

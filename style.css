@@ -11,6 +11,11 @@ main {
   margin: 20px 60px;
 }
 
+#form-container {
+  display: flex;
+  max-width: 60%;
+}
+
 #evaluation-form {
   display: flex;
   flex-direction: column;
