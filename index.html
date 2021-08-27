@@ -28,13 +28,13 @@
         </div>
         <!-- 8-12 - Alessandro -->
         <div class='full-name'>
-          <input type="text" name="nome" id="input-name" placeholder="Nome">
-          <input type="text" name="sobrenome" id="input-lastname" placeholder="Sobrenome">
+          <input type="text" name="nome" id="input-name" placeholder="Nome" required>
+          <input type="text" name="sobrenome" id="input-lastname" placeholder="Sobrenome" required>
         </div> 
         <div class='user-info'>
-          <input type="text" name="email" id="input-email" placeholder="Email">
+          <input type="text" name="email" id="input-email" placeholder="Email" required>
           
-          <select name="casa" id="house">
+          <select name="" id="house">
             <option value="Gitnória" id="gitnoria-house">Gitnória</option>
             <option value="Reactpuff" id="reactpuff-house">Reactpuff</option>
             <option value="Corvinode" id="corvinode-house">Corvinode</option>
@@ -53,7 +53,7 @@
           <label for="full-family">FullStack</label>
           <input type="radio" id="full-family" name="family" value="FullStack"> <br>
          </div>
-      <div class="subject">
+      <div>
         <label id="label-content">Qual conteúdo você está com mais vontade de aprender?</label><br>
           <label for="HoFs-family">HoFs</label>  
           <input name="materia" type="checkbox" id="HoFs-family" value="HoFs">
@@ -98,7 +98,7 @@
     <!-- 16-18 - Antonio -->
       <!-- 16 -->
       <label for="agreement" id="label-infos">Você concorda com o uso das informações acima?
-        <input type="checkbox" name="agreement" id="agreement">
+        <input type="checkbox" name="agreement" id="agreement" required>
       </label>
       <!-- 17 -->
       <button type="submit" id="submit-btn">Enviar</button>
