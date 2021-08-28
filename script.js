@@ -197,8 +197,6 @@ function formInfos() {
 function createText() {
   const infos = formInfos();
   const formToHide = document.getElementById('evaluation-form');
-  console.log(formToHide);
-  console.log(infos);
   if (infos) {
     const paragraph = document.createElement('p');
     paragraph.innerText = ` Nome: ${infos.Nome}
