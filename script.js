@@ -124,7 +124,7 @@ function runAllInfos() {
 function createText() {
   runAllInfos();
   const infos = formInfo;
-  const infoText = document.getElementById('form-container');
+  const infoText = document.getElementById('evaluation-form');
   const paragraph = document.createElement('p');
   paragraph.innerText = ` Nome: ${infos.Nome}
                             Email: ${infos.Email}
