@@ -11,6 +11,13 @@ main {
   margin: 20px 60px;
 }
 
+footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  background-color: rgb(50, 167, 145);
+}
+
 #form-container {
   display: flex;
   max-width: 60%;
@@ -96,8 +103,20 @@ main {
   margin-right: 20px;
 }
 
-@media (max-width: 1254px) {
+@media ( max-width : 1254px ) and ( min-width : 768px ) {
+
+  header {
+    display: flex;
+    flex-direction: column;
+  }
+
   main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  footer {
     display: flex;
     flex-direction: column;
     align-items: center;
