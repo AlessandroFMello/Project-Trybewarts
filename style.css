@@ -95,3 +95,15 @@ main {
 .container-select-markers div {
   margin-right: 20px;
 }
+
+@media (max-width: 1254px) {
+  main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  #trybewarts-form-logo {
+    align-items: center;
+  }
+}

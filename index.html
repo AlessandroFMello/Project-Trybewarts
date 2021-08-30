@@ -7,11 +7,12 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@300;600&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
   <link rel="stylesheet" href="style.css">
   <title>Trybewarts</title>
 </head>
 <body>
-  <header class="header">
+  <header class="header mb-3">
     <img class="trybewarts-header-logo" src="images/trybewarts-header-logo.svg" alt="Logotipo da escola de magia e programaria Trybewarts">
     <h1 id="trybewarts-header-title">Trybewarts</h1>
     <form class="trybewarts-login" action="" method="get">
@@ -21,20 +22,20 @@
     </form>
   </header>
   <main>
-    <div id="form-container">
+    <div id="form-container  mb-3">
     <form action="" id="evaluation-form">
-        <div class="form-title">
+        <div class="form-title mb-3">
           <h2>Formulário de Avaliação</h2>
         </div>
         <!-- 8-12 - Alessandro -->
-        <div class='full-name'>
-          <input type="text" name="nome" id="input-name" placeholder="Nome" required>
+        <div class='full-name mb-3'>
+          <input  type="text" name="nome" id="input-name" placeholder="Nome" required>
           <input type="text" name="sobrenome" id="input-lastname" placeholder="Sobrenome" required>
         </div> 
-        <div class='user-info'>
+        <div class='user-info mb-3'>
           <input type="text" name="email" id="input-email" placeholder="Email" required>
           
-          <select name="" id="house">
+          <select class='mb-3' name="" id="house">
             <option value="Gitnória" id="gitnoria-house">Gitnória</option>
             <option value="Reactpuff" id="reactpuff-house">Reactpuff</option>
             <option value="Corvinode" id="corvinode-house">Corvinode</option>
@@ -44,8 +45,8 @@
 
       <!-- 13-15 - Arthur -->
     <div class="container-select-markers">
-      <div id="family-container">
-        <label id="label-family">Qual sua família?</label><br>
+      <div class='mb-3' id="family-container">
+        <label class='mb-3' id="label-family">Qual sua família?</label><br>
           <label for="front-family">Frontend</label>
           <input type="radio" id="front-family" name="family" value="Frontend"> <br>
           <label for="back-family">Backend</label>
@@ -53,8 +54,8 @@
           <label for="full-family">FullStack</label>
           <input type="radio" id="full-family" name="family" value="FullStack"> <br>
          </div>
-      <div id="subjects-container">
-        <label id="label-content">Qual conteúdo você está com mais vontade de aprender?</label><br>
+      <div class='mb-3' id="subjects-container">
+        <label class='mb-3' id="label-content">Qual conteúdo você está com mais vontade de aprender?</label><br>
           <label for="HoFs-family">HoFs</label>  
           <input class="subject" name="materia" type="checkbox" id="HoFs-family" value="HoFs">
           <label for="Jest-family">Jest</label>  
@@ -69,7 +70,7 @@
           <input class="subject" name="materia" type="checkbox" id="Python-family" value="Python">
       </div>
     </div>
-    <div id="rate-container">
+    <div class='mb-3' id="rate-container">
       <label id="label-rate">Como você avalia a Trybewarts?</label>
         <label for="value-1">1</label>
         <input type="radio" id="value-1" name="rate" value="1">
@@ -94,10 +95,10 @@
     </div>
     <label class="textarea" >Deixe seu comentário:</label>
     <textarea name="textarea" id="textarea" cols="30" rows="10" maxlength="500"></textarea>
-    <div id='counter'>500 caracteres restantes.</div>
+    <div class='mb-3' id='counter'>500 caracteres restantes.</div>
     <!-- 16-18 - Antonio -->
       <!-- 16 -->
-      <label for="agreement" id="label-infos">Você concorda com o uso das informações acima?
+      <label class='mb-3' for="agreement" id="label-infos">Você concorda com o uso das informações acima?
         <input type="checkbox" name="agreement" id="agreement" required>
       </label>
       <!-- 17 -->
