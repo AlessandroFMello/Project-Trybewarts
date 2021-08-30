@@ -1,7 +1,12 @@
 * {
   margin: 0;
   padding: 0;
-  font-family: Source Code Pro, Verdana, sans-serif;
+}
+
+body {
+  font-family: Montserrat, sans-serif;
+  background-color: rgb(250, 250, 250);
+  color: rgb(80, 80, 80);
 }
 
 main {
@@ -9,6 +14,13 @@ main {
   justify-content: space-between;
   flex-wrap: wrap;
   margin: 20px 60px;
+}
+
+#form-container {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 60%;
+  align-items: center;
 }
 
 #evaluation-form {
@@ -32,14 +44,30 @@ main {
 
 #user-info {
   display: flex;
+  width: 100%;
 }
 
 #house {
   cursor: pointer;
+  color: rgb(112, 112, 112);
+  width: 49%;
+  border: 1px solid rgb(184, 184, 184);
+  border-radius: 5px;
+  padding: 5px;
+  background-color: transparent;
+  list-style: none;
+}
+
+.rate-divs label {
+  margin-left: 10px;
 }
 
 #label-family label , input {
   cursor: pointer;
+}
+
+#label-content {
+  margin-bottom: 10px;
 }
 
 #label-content label , input {
@@ -50,11 +78,64 @@ main {
   cursor: pointer;
 }
 
+#label-family {
+  width: 100%;
+}
+
+#family-container {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+#subjects-container {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+#subjects-container .content-divs {
+  display: flex;
+  align-items: center;
+  align-content: space-around;
+  padding: 2px 10px;
+  margin: 0;
+}
+
+#subjects-container .content-divs label {
+  padding-right: 10px;
+}
+
+#rate-container {
+  width: 100%;
+  display: flex;
+  margin-bottom: 20px;
+  flex-flow: column wrap;
+  align-items: left;
+  cursor: pointer;
+}
+
+#textarea {
+  margin: 10px 0;
+}
+
+#label-infos {
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
 .header {
   display: flex;
   background-color: rgb(50, 167, 145);
   justify-content: space-between;
   align-items: center;
+  height: 100px;
+  padding: 0 10%;
+}
+
+.header h1 {
+  font-family: Bebas Neue, cursive;
+  color: rgb(51, 51, 51);
 }
 
 .trybewarts-header-logo {
@@ -65,22 +146,63 @@ main {
 .trybewarts-login {
   display: flex;
   align-self: center;
+  align-items: center;
 }
 
 .trybewarts-login input {
   margin: 0 5px;
   padding: 10px;
+  height: 30px;
   border-radius: 10px;
   border: none;
+  cursor: text;
 }
 
 .trybewarts-login button {
-  padding: 10px;
+  padding: 5px;
   margin: 0 5px;
   border-radius: 10px;
   border: none;
-  background-color: rgb(89, 31, 9);
+  background-color: rgb(0, 59, 229);
   color: rgb(251, 250, 250);
+  height: 35px;
+  font-weight: 600;
+  font-size: 15px;
+  text-transform: uppercase;
+}
+
+.trybe-img {
+  margin-top: 10%;
+}
+
+.full-name input {
+  cursor: text;
+  height: 35px;
+  width: 49%;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  outline: 0;
+  border: 1px solid rgb(184, 184, 184);
+  border-radius: 5px;
+  padding: 10px;
+}
+
+.user-info input , select {
+  height: 35px;
+  width: 49%;
+  margin-bottom: 20px;
+  outline: 0;
+}
+
+.user-info input {
+  cursor: text;
+  border: 1px solid rgb(184, 184, 184);
+  border-radius: 5px;
+  padding: 10px;
+}
+
+.user-info select {
+  color: rgb(80, 80, 80);
 }
 
 .container-select-markers {
@@ -88,5 +210,44 @@ main {
 }
 
 .container-select-markers div {
-  margin-right: 20px;
+  margin-right: 10px;
+  margin-bottom: 20px;
+}
+
+.rate-divs {
+  margin-top: 20px;
+}
+
+.rate-divs input {
+  margin-left: 2px;
+}
+
+.submit-button {
+  font-weight: 600;
+}
+
+.footer {
+  display: flex;
+  color: rgb(236, 236, 236);
+  margin-top: 150px;
+  background-color: rgb(40, 126, 110);
+  justify-content: space-around;
+  align-items: center;
+}
+
+.developed-by {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 5px;
+  margin-top: 20px;
+}
+
+.developed-by a {
+  color: rgb(236, 236, 236);
+  text-decoration: none;
+}
+
+.developed-by a p:hover {
+  color: white;
+  text-decoration: underline;
 }
