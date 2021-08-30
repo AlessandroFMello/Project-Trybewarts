@@ -4,6 +4,15 @@
   font-family: Source Code Pro, Verdana, sans-serif;
 }
 
+body {
+  display: flex;
+  flex-direction:  column;
+  align-items: stretch;
+  justify-content: center;
+  width: 80%;
+  margin: auto;
+}
+
 main {
   display: flex;
   justify-content: space-between;
@@ -35,7 +44,13 @@ footer {
 }
 
 #full-name {
-  display: flex;
+}
+
+#input-name {
+}
+
+
+#input-lastname {
 }
 
 #trybewarts-forms-logo {
@@ -67,6 +82,12 @@ footer {
   background-color: rgb(50, 167, 145);
   justify-content: space-between;
   align-items: center;
+}
+
+.label-rate {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
 }
 
 .trybewarts-header-logo {
@@ -120,6 +141,11 @@ footer {
     display: flex;
     flex-direction: column;
     align-items: center;
+  }
+
+  .trybewarts-header-logo {
+    width: 200px;
+    height: 200px;
   }
 
   #trybewarts-form-logo {
